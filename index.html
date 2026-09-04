@@ -1,155 +1,2160 @@
 <!DOCTYPE html>
-<!--
-  ================================================================
-  READ THIS BEFORE YOU PASTE ANYTHING
-
-  When Gemini gives you a page, you do NOT paste it into a part of
-  this file. You replace the entire file.
-
-  Click into the editor, press Ctrl+A (Cmd+A on Mac), press Delete,
-  then paste. Everything here is meant to be thrown away.
-
-  Do that only AFTER your live link works. Get the link first.
-  ================================================================
--->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My first site</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0d1d30;
-    --card: #142a44;
-    --line: #27466a;
-    --aqua: #6de1d7;
-    --text: #ffffff;
-    --muted: #94a9bf;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--navy);
-    color: var(--text);
-    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 6vh 20px;
-  }
-  main { width: 100%; max-width: 640px; }
-  .badge {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin-bottom: 18px;
-  }
-  h1 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 800;
-    font-size: clamp(38px, 9vw, 68px);
-    letter-spacing: -0.05em;
-    line-height: 1.02;
-    margin: 0 0 8px;
-  }
-  .name {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: clamp(18px, 4vw, 24px);
-    letter-spacing: -0.04em;
-    color: var(--aqua);
-    margin: 0 0 24px;
-  }
-  p.lead { font-size: 18px; color: var(--muted); margin: 0 0 34px; }
-  .card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 26px 28px;
-    margin-bottom: 18px;
-  }
-  .card h2 {
-    font-family: "Unbounded", "Manrope", sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    color: var(--aqua);
-    margin: 0 0 16px;
-  }
-  ol { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 12px; color: var(--muted); }
-  li:last-child { margin-bottom: 0; }
-  li b { color: var(--text); font-weight: 700; }
-  code {
-    font-family: ui-monospace, "SF Mono", Consolas, monospace;
-    font-size: 0.92em;
-    background: #0a1727;
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    padding: 1px 6px;
-    color: var(--aqua);
-  }
-  a { color: var(--aqua); }
-  footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #6e839a;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PolyPath | Cal Poly Smart Enrollment & Degree Progress</title>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cp-green: #154734;
+      --cp-green-dark: #0d2f22;
+      --cp-green-light: #1f644a;
+      --cp-green-subtle: #eaf3ee;
+      --cp-gold: #c69214;
+      --cp-gold-light: #fef7e7;
+      --cp-gold-hover: #b07e0c;
+      --success: #16a34a;
+      --success-bg: #dcfce7;
+      --warning: #d97706;
+      --warning-bg: #fef3c7;
+      --danger: #dc2626;
+      --danger-bg: #fee2e2;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px -2px rgba(0,0,0,0.08), 0 2px 6px -2px rgba(0,0,0,0.04);
+      --shadow-lg: 0 12px 24px -4px rgba(0,0,0,0.12), 0 4px 10px -3px rgba(0,0,0,0.05);
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--slate-100);
+      color: var(--slate-800);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Nav */
+    header {
+      background: var(--cp-green);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow-md);
+    }
+
+    .nav-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo-badge {
+      background: var(--cp-gold);
+      color: var(--cp-green-dark);
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      letter-spacing: -0.5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+    }
+
+    .portal-sync-status {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .sync-chip {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.3);
+    }
+
+    .btn-sync {
+      background: var(--cp-gold);
+      color: var(--cp-green-dark);
+      border: none;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-sync:hover {
+      background: #dba118;
+      transform: translateY(-1px);
+    }
+
+    /* Sub-nav / Tabs Bar */
+    .tab-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--slate-200);
+      position: sticky;
+      top: 61px;
+      z-index: 40;
+    }
+
+    .tab-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      padding: 0 1.5rem;
+      gap: 0.5rem;
+      overflow-x: auto;
+    }
+
+    .nav-tab {
+      padding: 0.95rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .nav-tab:hover {
+      color: var(--cp-green);
+      background-color: var(--slate-50);
+    }
+
+    .nav-tab.active {
+      color: var(--cp-green);
+      border-bottom-color: var(--cp-green);
+      background-color: #fff;
+    }
+
+    .badge-count {
+      background: var(--slate-200);
+      color: var(--slate-700);
+      font-size: 0.75rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+    }
+
+    .nav-tab.active .badge-count {
+      background: var(--cp-green-subtle);
+      color: var(--cp-green);
+    }
+
+    /* Main Container */
+    main {
+      max-width: 1300px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1.5rem;
+      flex: 1;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.25s ease forwards;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Card System */
+    .card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-sm);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* PolyProfile Banner */
+    .profile-hero {
+      background: linear-gradient(135deg, var(--cp-green) 0%, #0f3929 100%);
+      color: white;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-hero::after {
+      content: "CAL POLY";
+      position: absolute;
+      right: -20px;
+      bottom: -35px;
+      font-size: 6rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .student-meta h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .standing-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      background: var(--cp-gold);
+      color: var(--cp-green-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .meta-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin-top: 0.5rem;
+    }
+
+    .meta-item strong {
+      color: white;
+    }
+
+    .hero-stat-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      min-width: 170px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffde7a;
+      line-height: 1.1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 0.3rem;
+    }
+
+    /* Grid Layout for Analytics */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 992px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+      .profile-hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Donut chart SVG & Credit Progress */
+    .progress-center-stat {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+
+    .chart-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .donut-circle {
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+
+    .chart-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .chart-pct {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--cp-green);
+      line-height: 1;
+    }
+
+    .chart-sub {
+      font-size: 0.75rem;
+      color: var(--slate-400);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .legend-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .legend-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+    }
+
+    .legend-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--slate-700);
+    }
+
+    .color-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    /* Category Meters */
+    .meter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .meter-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .meter-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .meter-track {
+      height: 12px;
+      background: var(--slate-200);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      display: flex;
+    }
+
+    .meter-fill {
+      height: 100%;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .meter-completed { background: var(--cp-green); }
+    .meter-in-progress { background: var(--cp-gold); }
+
+    .meter-caption {
+      font-size: 0.78rem;
+      color: var(--slate-600);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Course Tables */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    table.data-table th {
+      background: var(--slate-50);
+      color: var(--slate-600);
+      font-weight: 700;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid var(--slate-200);
+      white-space: nowrap;
+    }
+
+    table.data-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--slate-200);
+      vertical-align: middle;
+    }
+
+    table.data-table tr:hover td {
+      background: var(--slate-50);
+    }
+
+    .grade-badge {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+    .grade-A { background: var(--success-bg); color: var(--success); }
+    .grade-B { background: #e0f2fe; color: #0369a1; }
+    .grade-IP { background: var(--warning-bg); color: var(--warning); }
+
+    /* Class Search Tab Styles */
+    .search-filter-panel {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--slate-200);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+
+    @media (max-width: 900px) {
+      .filter-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .input-group label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--slate-700);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1.5px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--slate-800);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      border-color: var(--cp-green);
+      box-shadow: 0 0 0 3px rgba(21, 71, 52, 0.15);
+    }
+
+    .smart-filter-toggles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--slate-200);
+      align-items: center;
+    }
+
+    .filter-pill {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-300);
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .filter-pill:hover {
+      background: var(--slate-200);
+    }
+
+    .filter-pill.active {
+      background: var(--cp-green);
+      color: white;
+      border-color: var(--cp-green);
+    }
+
+    .pill-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--slate-400);
+    }
+
+    .filter-pill.active .pill-indicator {
+      background: #86efac;
+    }
+
+    /* Course Cards List */
+    .course-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--slate-200);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1.25rem;
+      align-items: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+    }
+
+    .course-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .course-card.highlight-needed {
+      border-left: 6px solid var(--success);
+    }
+
+    .course-card.highlight-taken {
+      border-left: 6px solid var(--slate-400);
+      opacity: 0.8;
+      background: #fbfbfb;
+    }
+
+    .course-card.highlight-elective {
+      border-left: 6px solid var(--warning);
+    }
+
+    .course-primary {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .course-header-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .course-code {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--cp-green);
+      letter-spacing: -0.3px;
+    }
+
+    .course-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+
+    .course-units {
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      font-weight: 600;
+      background: var(--slate-100);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Cal Poly Requirement Markers */
+    .req-marker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .req-needed {
+      background: var(--success-bg);
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .req-fulfilled {
+      background: var(--slate-200);
+      color: var(--slate-700);
+      border: 1px solid var(--slate-300);
+    }
+
+    .req-ge-needed {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .req-warning {
+      background: var(--warning-bg);
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+
+    .why-needed-box {
+      font-size: 0.85rem;
+      padding: 0.6rem 0.85rem;
+      border-radius: var(--radius-md);
+      background: var(--slate-50);
+      border-left: 3px solid var(--cp-green);
+      color: var(--slate-700);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .why-icon {
+      flex-shrink: 0;
+      font-size: 0.95rem;
+    }
+
+    .course-logistics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.84rem;
+      color: var(--slate-600);
+      margin-top: 0.25rem;
+    }
+
+    .logistic-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .seats-status {
+      font-weight: 600;
+    }
+    .seats-open { color: var(--success); }
+    .seats-low { color: var(--warning); }
+    .seats-waitlist { color: var(--danger); }
+
+    .course-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .btn-add-course {
+      background: var(--cp-green);
+      color: white;
+      border: none;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .btn-add-course:hover {
+      background: var(--cp-green-dark);
+      box-shadow: 0 4px 10px rgba(21, 71, 52, 0.25);
+    }
+
+    .btn-add-course.added {
+      background: var(--success);
+    }
+
+    .btn-add-course:disabled {
+      background: var(--slate-300);
+      color: var(--slate-600);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Cart / Schedule Builder Tab */
+    .schedule-summary-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 850px) {
+      .schedule-summary-grid {
+        grid-template-columns: 1fr;
+      }
+      .course-card {
+        grid-template-columns: 1fr;
+      }
+      .course-actions {
+        align-items: flex-start;
+      }
+    }
+
+    /* Modal / Message Toast */
+    .toast-box {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--slate-900);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-size: 0.92rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transform: translateY(150%);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+    }
+
+    .toast-box.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Modal Dialog */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 480px;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+
+    .modal-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--cp-green);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--slate-400);
+    }
+
+    .modal-close:hover {
+      color: var(--slate-700);
+    }
+
+    /* Custom Checkboxes */
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .checkbox-label input {
+      accent-color: var(--cp-green);
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--slate-600);
+    }
+    .empty-state svg {
+      margin-bottom: 0.75rem;
+      stroke: var(--slate-300);
+    }
+  </style>
 </head>
 <body>
-<main>
 
-  <span class="badge">Cal Poly Vibe Coding &middot; Session 01</span>
+  <!-- Top Cal Poly Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand" onclick="switchTab('auditTab'); return false;">
+        <div class="logo-badge">CP</div>
+        <div>
+          <div class="brand-title">PolyPath <span>⚡</span></div>
+          <div class="brand-sub">Cal Poly SLO Degree & Enrollment Engine</div>
+        </div>
+      </a>
 
-  <h1>It&rsquo;s live.</h1>
+      <div class="portal-sync-status">
+        <div class="sync-chip" id="syncStatusBadge">
+          <div class="pulse-dot"></div>
+          <span>PolyProfile: <strong>Connected</strong></span>
+        </div>
+        <button class="btn-sync" onclick="openSyncModal()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+          Switch Student Profile
+        </button>
+      </div>
+    </div>
+  </header>
 
-  <!-- Step 5: change the name below to yours, then commit. -->
-  <p class="name">Built by Gabe Chapple</p>
+  <!-- Sticky Navigation Tabs -->
+  <nav class="tab-nav">
+    <div class="tab-inner">
+      <button class="nav-tab active" id="tabBtn-audit" onclick="switchTab('auditTab')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        PolyProfile & Grad Progress
+      </button>
+      <button class="nav-tab" id="tabBtn-search" onclick="switchTab('searchTab')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Smart Class Search
+        <span class="badge-count" id="classesCountBadge">12 Available</span>
+      </button>
+      <button class="nav-tab" id="tabBtn-cart" onclick="switchTab('cartTab')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Fall 2026 Cart
+        <span class="badge-count" id="cartCountBadge" style="background: var(--cp-gold); color: #000;">0 Units</span>
+      </button>
+    </div>
+  </nav>
 
-  <p class="lead">
-    This page is on the internet. Anyone you send this link to can open it,
-    on any device, right now. You made that happen in about five minutes.
-  </p>
+  <!-- Main Work Area -->
+  <main>
+    
+    <!-- TAB 1: POLYPROFILE & GRAD STANDING / AUDIT -->
+    <div id="auditTab" class="tab-content active">
+      
+      <!-- Profile Hero Banner -->
+      <div class="profile-hero">
+        <div class="student-meta">
+          <h2>
+            <span id="studentName">Alex Rivera</span>
+            <span class="standing-tag" id="studentStanding">Senior Standing</span>
+          </h2>
+          <div class="meta-details">
+            <div class="meta-item">EMPLID: <strong id="studentEmplid">014892019</strong></div>
+            <div class="meta-item">Major: <strong id="studentMajor">Computer Science (B.S.)</strong></div>
+            <div class="meta-item">College: <strong>College of Engineering (CENG)</strong></div>
+            <div class="meta-item">Expected Grad: <strong id="studentGradTerm">Spring 2027</strong></div>
+          </div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hero-stat-value" id="studentGpa">3.68</div>
+          <div class="hero-stat-label">Higher Ed GPA (Good Standing)</div>
+        </div>
+      </div>
 
-  <div class="card">
-    <h2>Three things, in this order</h2>
-    <ol>
-      <li><b>Put your name on it.</b> Edit <code>index.html</code>, change
-        YOUR NAME HERE above, commit, refresh this page.</li>
-      <li><b>Submit this link.</b> Go to
-        <a href="https://www.calpolyvibecoding.com/">calpolyvibecoding.com</a>,
-        make an account, and paste this URL in. That is how you get counted,
-        and how Claude seats get assigned.</li>
-      <li><b>Then build.</b> Open Gemini, get a page, and replace this entire
-        file with it.</li>
-    </ol>
+      <!-- Degree Progress Visualizations -->
+      <div class="dashboard-grid">
+        
+        <!-- Left: Donut Chart Overview -->
+        <div class="card">
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--cp-green); margin-bottom: 0.5rem;">
+            Total Degree Units
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--slate-600);">
+            Required to Graduate: <strong>180 Units</strong>
+          </p>
+
+          <div class="progress-center-stat">
+            <div class="chart-container">
+              <svg width="200" height="200" viewBox="0 0 200 200">
+                <!-- Background Circle Track -->
+                <circle cx="100" cy="100" r="75" fill="transparent" stroke="#e2e8f0" stroke-width="20"></circle>
+                <!-- In Progress Arc -->
+                <circle id="donutInProgressArc" class="donut-circle" cx="100" cy="100" r="75" fill="transparent" 
+                        stroke="#c69214" stroke-width="20" stroke-dasharray="471" stroke-dashoffset="471"></circle>
+                <!-- Completed Arc -->
+                <circle id="donutCompletedArc" class="donut-circle" cx="100" cy="100" r="75" fill="transparent" 
+                        stroke="#154734" stroke-width="20" stroke-dasharray="471" stroke-dashoffset="180"></circle>
+              </svg>
+              <div class="chart-text">
+                <div class="chart-pct" id="totalProgressPct">68%</div>
+                <div class="chart-sub">Completed</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="legend-list">
+            <div class="legend-row">
+              <span class="legend-name">
+                <div class="color-swatch" style="background: var(--cp-green);"></div>
+                Completed Units
+              </span>
+              <strong id="completedUnitsText">122 Units</strong>
+            </div>
+            <div class="legend-row">
+              <span class="legend-name">
+                <div class="color-swatch" style="background: var(--cp-gold);"></div>
+                Enrolled / In-Progress
+              </span>
+              <strong id="ipUnitsText">16 Units</strong>
+            </div>
+            <div class="legend-row">
+              <span class="legend-name">
+                <div class="color-swatch" style="background: var(--slate-200);"></div>
+                Remaining Needed
+              </span>
+              <strong id="remainingUnitsText">42 Units</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--slate-200); font-size: 0.85rem; color: var(--slate-600);">
+            <div style="display:flex; justify-content:space-between; margin-bottom: 0.35rem;">
+              <span>GWR (Grad Writing Requirement):</span>
+              <span style="color: var(--success); font-weight: 700;">✓ Satisfied</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span>USCP (US Cultural Pluralism):</span>
+              <span style="color: var(--warning); font-weight: 700;" id="uscpStatus">⚠️ Needed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Category Stack Breakdown -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--cp-green);">Requirement Area Breakdown</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-600);">Live synchronization with Cal Poly Degree Progress Report (DPR)</p>
+            </div>
+            <button class="btn-sync" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;" onclick="switchTab('searchTab')">
+              Find Needed Courses →
+            </button>
+          </div>
+
+          <div class="meter-group">
+            
+            <!-- Major Core -->
+            <div class="meter-item">
+              <div class="meter-header">
+                <span>Major Core Courses</span>
+                <span><strong id="coreProgressText">52</strong> / 76 Units</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill meter-completed" style="width: 68%;"></div>
+                <div class="meter-fill meter-in-progress" style="width: 8%;"></div>
+              </div>
+              <div class="meter-caption">
+                <span>Completed: 52u • In-Progress: 4u</span>
+                <span style="color: var(--danger); font-weight: 600;">20 Units Needed</span>
+              </div>
+            </div>
+
+            <!-- Support Courses -->
+            <div class="meter-item">
+              <div class="meter-header">
+                <span>Support & Science Electives</span>
+                <span><strong id="supportProgressText">28</strong> / 36 Units</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill meter-completed" style="width: 77%;"></div>
+                <div class="meter-fill meter-in-progress" style="width: 11%;"></div>
+              </div>
+              <div class="meter-caption">
+                <span>Completed: 28u • In-Progress: 4u</span>
+                <span style="color: var(--warning); font-weight: 600;">4 Units Needed</span>
+              </div>
+            </div>
+
+            <!-- General Education (GE) -->
+            <div class="meter-item">
+              <div class="meter-header">
+                <span>General Education (GE Breadth)</span>
+                <span><strong id="geProgressText">36</strong> / 48 Units</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill meter-completed" style="width: 75%;"></div>
+                <div class="meter-fill meter-in-progress" style="width: 8%;"></div>
+              </div>
+              <div class="meter-caption">
+                <span>Completed: 36u (Areas A1, A2, A3, B1, B4, C1, D2)</span>
+                <span style="color: var(--cp-green); font-weight: 700;">Needs: GE Area C2, D1 (USCP), & F</span>
+              </div>
+            </div>
+
+            <!-- Free Electives -->
+            <div class="meter-item">
+              <div class="meter-header">
+                <span>Free & Technical Electives</span>
+                <span><strong id="elecProgressText">6</strong> / 20 Units</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill meter-completed" style="width: 30%;"></div>
+                <div class="meter-fill meter-in-progress" style="width: 20%;"></div>
+              </div>
+              <div class="meter-caption">
+                <span>Completed: 6u • In-Progress: 4u</span>
+                <span style="color: var(--slate-600); font-weight: 600;">10 Units Needed</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Tip -->
+          <div class="why-needed-box" style="margin-top: 1.5rem; background: var(--cp-green-subtle); border-color: var(--cp-green);">
+            <div class="why-icon">💡</div>
+            <div>
+              <strong>Cal Poly Registration Tip:</strong> Your enrollment appointment for Fall 2026 begins based on your <strong>Senior Standing</strong> credit count. Focus on completing <strong>CSC 349</strong> and your missing <strong>GE Area D1 / USCP</strong> requirement this upcoming cycle.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Completed Classes Table -->
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-800);">Academic History (PolyProfile Course Ledger)</h3>
+            <p style="font-size: 0.85rem; color: var(--slate-600);">Verified course credit pulled from Cal Poly Student Center</p>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--slate-600);">
+            Showing <strong id="transcriptCount">14</strong> verified courses
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Course</th>
+                <th>Course Title</th>
+                <th>Units</th>
+                <th>Grade</th>
+                <th>Requirement Fulfilled</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="transcriptTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: SMART CLASS SEARCH WITH GRADUATION MARKERS -->
+    <div id="searchTab" class="tab-content">
+      
+      <!-- Filter Panel -->
+      <div class="search-filter-panel">
+        <div class="filter-grid">
+          <div class="input-group">
+            <label for="searchQueryInput">Search Cal Poly Catalog & Schedule</label>
+            <input type="text" id="searchQueryInput" class="form-control" placeholder="Search by course code, keyword, or instructor (e.g., CSC 349, Ethics, Seng)" oninput="filterCourses()">
+          </div>
+
+          <div class="input-group">
+            <label for="deptSelect">Subject Prefix</label>
+            <select id="deptSelect" class="form-control" onchange="filterCourses()">
+              <option value="ALL">All Departments</option>
+              <option value="CSC">CSC - Computer Science</option>
+              <option value="PHIL">PHIL - Philosophy</option>
+              <option value="HIST">HIST - History</option>
+              <option value="MATH">MATH - Mathematics</option>
+              <option value="PHYS">PHYS - Physics</option>
+              <option value="ES">ES - Ethnic Studies</option>
+              <option value="COMS">COMS - Communication</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="geSelect">GE Area</label>
+            <select id="geSelect" class="form-control" onchange="filterCourses()">
+              <option value="ALL">All Areas / Any</option>
+              <option value="A">Area A - English & Comm</option>
+              <option value="B">Area B - Sci & Math</option>
+              <option value="C2">Area C2 - Humanities</option>
+              <option value="D1">Area D1 - US History / Govt</option>
+              <option value="D2">Area D2 - Social Science</option>
+              <option value="F">Area F - Ethnic Studies</option>
+              <option value="USCP">USCP Requirement</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="termSelect">Term</label>
+            <select id="termSelect" class="form-control">
+              <option value="F26">Fall 2026 (Registration Open)</option>
+              <option value="W27">Winter 2027 (Preview)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Smart Filter Badges -->
+        <div class="smart-filter-toggles">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-600); margin-right: 0.5rem; text-transform: uppercase;">Smart Poly Filters:</span>
+          
+          <div class="filter-pill active" id="filterAll" onclick="setRequirementFilter('ALL')">
+            <span>Show All Courses</span>
+          </div>
+
+          <div class="filter-pill" id="filterNeeded" onclick="setRequirementFilter('NEEDED_ONLY')">
+            <div class="pill-indicator" style="background: #22c55e;"></div>
+            <span>Only Courses I Need to Graduate</span>
+          </div>
+
+          <div class="filter-pill" id="filterMajor" onclick="setRequirementFilter('MAJOR_ONLY')">
+            <span>Major Core Only</span>
+          </div>
+
+          <div class="filter-pill" id="filterGE" onclick="setRequirementFilter('GE_ONLY')">
+            <span>Needed GE Breadth Only</span>
+          </div>
+
+          <div class="checkbox-label" style="margin-left: auto;">
+            <input type="checkbox" id="openSeatsOnly" onchange="filterCourses()">
+            <span>Hide Full / Closed Sections</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Results Section -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0 0.5rem;">
+        <div style="font-size: 0.95rem; font-weight: 700; color: var(--slate-700);" id="resultsCounterText">
+          Showing 10 Courses matching your criteria
+        </div>
+        <div style="font-size: 0.82rem; color: var(--slate-600);">
+          Legend: 
+          <span style="color: var(--success); font-weight: 700; margin-left: 0.4rem;">● Needed for Grad</span>
+          <span style="color: var(--warning); font-weight: 700; margin-left: 0.4rem;">▲ Elective / Caution</span>
+          <span style="color: var(--slate-400); font-weight: 700; margin-left: 0.4rem;">✓ Already Completed</span>
+        </div>
+      </div>
+
+      <!-- Course Cards Dynamic Container -->
+      <div class="course-cards-container" id="coursesListContainer">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+
+    <!-- TAB 3: PLANNED SCHEDULE / ENROLLMENT CART -->
+    <div id="cartTab" class="tab-content">
+      
+      <div class="schedule-summary-grid">
+        
+        <!-- Left: Current Enrolled / Cart Courses -->
+        <div>
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+              <div>
+                <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--cp-green);">Fall 2026 Planned Cart</h3>
+                <p style="font-size: 0.85rem; color: var(--slate-600);">Courses ready for Cal Poly Schedule Builder checkout</p>
+              </div>
+              <button class="btn-sync" style="background: var(--danger-bg); color: var(--danger);" onclick="clearCart()">
+                Clear All
+              </button>
+            </div>
+
+            <div id="cartItemsList">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Enrollment Impact Summary -->
+        <div>
+          <div class="card" style="position: sticky; top: 130px;">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--slate-800); margin-bottom: 1rem;">
+              Graduation Impact
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.9rem;">
+              <div style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px solid var(--slate-200);">
+                <span style="color: var(--slate-600);">Planned Units:</span>
+                <strong id="cartTotalUnits" style="font-size: 1.1rem; color: var(--cp-green);">0 Units</strong>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px solid var(--slate-200);">
+                <span style="color: var(--slate-600);">Unit Load Status:</span>
+                <span id="loadStatusPill" style="font-weight: 700; color: var(--slate-600);">No Classes Added</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px solid var(--slate-200);">
+                <span style="color: var(--slate-600);">Degree Requirements Met:</span>
+                <strong id="cartReqsMetCount">0 Requirements</strong>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; padding-bottom: 0.5rem; border-bottom: 1px solid var(--slate-200);">
+                <span style="color: var(--slate-600);">Units Left After Term:</span>
+                <strong id="unitsAfterTerm">42 Units</strong>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+              <button class="btn-add-course" style="width: 100%; justify-content: center; padding: 0.85rem; font-size: 1rem;" onclick="simulateRegistration()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Validate & Enroll in Cal Poly
+              </button>
+              <p style="font-size: 0.75rem; color: var(--slate-600); text-align: center; margin-top: 0.65rem;">
+                Locks in priority enrollment pass during your assigned PolyProfile registration window.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- PolyProfile Switch / Sync Modal -->
+  <div class="modal-overlay" id="syncModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeSyncModal()">&times;</button>
+      <div class="modal-title">
+        <span>🔄</span> PolyProfile Sync Engine
+      </div>
+      <p style="font-size: 0.88rem; color: var(--slate-600); margin-bottom: 1.25rem;">
+        Connect to Cal Poly Single Sign-On (Duo Authenticated) or choose a sample profile scenario:
+      </p>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <button class="btn-sync" style="justify-content: flex-start; padding: 0.85rem 1rem; width: 100%;" onclick="loadSampleProfile('senior')">
+          <div>
+            <div style="font-weight: 700;">Alex Rivera (Senior - Computer Science)</div>
+            <div style="font-size: 0.75rem; opacity: 0.85;">122 Completed • Needs CSC 349 & GE Area C2/D1</div>
+          </div>
+        </button>
+
+        <button class="btn-sync" style="justify-content: flex-start; padding: 0.85rem 1rem; width: 100%; background: #ffffff; border: 1.5px solid var(--slate-300); color: var(--slate-800);" onclick="loadSampleProfile('sophomore')">
+          <div>
+            <div style="font-weight: 700;">Jordan Blake (Sophomore - Software Eng)</div>
+            <div style="font-size: 0.75rem; color: var(--slate-600);">64 Completed • Needs Major Data Structures & Math</div>
+          </div>
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+        <button class="btn-sync" style="background: var(--slate-200); color: var(--slate-700);" onclick="closeSyncModal()">Cancel</button>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>How to replace this page</h2>
-    <ol>
-      <li>Copy what Gemini gives you with the <b>copy button</b> on the code
-        block. Do not click and drag.</li>
-      <li>Open <code>index.html</code> here and click the pencil icon.</li>
-      <li><b>Ctrl+A</b> (<b>Cmd+A</b> on Mac), then <b>Delete</b>. All of it.
-        Yes, really.</li>
-      <li>Paste, commit, refresh.</li>
-    </ol>
+  <!-- Interactive Toast Notification -->
+  <div class="toast-box" id="toastBox">
+    <span id="toastIcon">✨</span>
+    <span id="toastMessage">PolyProfile synchronized successfully!</span>
   </div>
 
-  <footer>
-    Nothing on this page is precious. It exists so the link has something to
-    show before you have something of your own.
-  </footer>
+  <script>
+    /* ==========================================================
+       CAL POLY ENROLLMENT DATA & LOGIC ENGINE
+       ========================================================== */
 
-</main>
+    // Simulated Student Profile
+    let currentStudent = {
+      name: "Alex Rivera",
+      emplid: "014892019",
+      major: "Computer Science (B.S.)",
+      standing: "Senior Standing",
+      gpa: "3.68",
+      gradTerm: "Spring 2027",
+      totalRequired: 180,
+      completedUnits: 122,
+      inProgressUnits: 16,
+      // Record of courses completed
+      completedCourses: [
+        { term: "Fall 2023", code: "CSC 123", title: "Intro to Computing", units: 4, grade: "A", req: "Major Orientation" },
+        { term: "Winter 2024", code: "CSC 202", title: "Data Structures", units: 4, grade: "A", req: "Major Core" },
+        { term: "Winter 2024", code: "MATH 141", title: "Calculus I", units: 4, grade: "B+", req: "GE Area B4 (Math)" },
+        { term: "Spring 2024", code: "CSC 203", title: "Project-Based OOP", units: 4, grade: "A-", req: "Major Core" },
+        { term: "Spring 2024", code: "MATH 142", title: "Calculus II", units: 4, grade: "B", req: "Support Requirement" },
+        { term: "Spring 2024", code: "ENGL 134", title: "Writing and Rhetoric", units: 4, grade: "A", req: "GE Area A2 (Written)" },
+        { term: "Fall 2024", code: "CSC 225", title: "Computer Org & Assembly", units: 4, grade: "A", req: "Major Core" },
+        { term: "Fall 2024", code: "COMS 101", title: "Public Speaking", units: 4, grade: "B+", req: "GE Area A1 (Oral)" },
+        { term: "Fall 2024", code: "PHYS 141", title: "General Physics I", units: 4, grade: "B", req: "Support Science (B1)" },
+        { term: "Winter 2025", code: "CSC 357", title: "Systems Programming", units: 4, grade: "A", req: "Major Core" },
+        { term: "Winter 2025", code: "PHIL 126", title: "Logic & Critical Thinking", units: 4, grade: "A", req: "GE Area A3 (Crit)" },
+        { term: "Spring 2025", code: "CSC 300", title: "Professional Responsibilities", units: 4, grade: "A", req: "Major Support" },
+        { term: "Spring 2025", code: "ART 111", title: "Intro to Art & Design", units: 4, grade: "A", req: "GE Area C1 (Arts)" },
+        { term: "Spring 2025", code: "PSY 201", title: "General Psychology", units: 4, grade: "A", req: "GE Area D2 (Social)" }
+      ],
+      // Track fulfilled requirements
+      fulfilledReqKeys: {
+        "CSC 123": true,
+        "CSC 202": true,
+        "CSC 203": true,
+        "CSC 225": true,
+        "CSC 357": true,
+        "MATH 141": true,
+        "MATH 142": true,
+        "ENGL 134": true,
+        "COMS 101": true,
+        "PHYS 141": true,
+        "PHIL 126": true,
+        "ART 111": true,
+        "PSY 201": true,
+        "GE_A1": true,
+        "GE_A2": true,
+        "GE_A3": true,
+        "GE_B1": true,
+        "GE_B4": true,
+        "GE_C1": true,
+        "GE_D2": true
+      }
+    };
+
+    // Course Catalog for Search with Cal Poly Specific Grad Requirements
+    const courseCatalog = [
+      {
+        id: "csc-349",
+        code: "CSC 349",
+        title: "Design and Analysis of Algorithms",
+        dept: "CSC",
+        units: 4,
+        instructor: "Dr. Clark Turner",
+        days: "MWF",
+        time: "10:10 AM - 11:30 AM",
+        location: "Bldg 14 (Frank E. Phelan) Rm 249",
+        seatsTotal: 35,
+        seatsOpen: 12,
+        geArea: "NONE",
+        isMajorCore: true,
+        isSupport: false,
+        uscp: false,
+        description: "Advanced algorithm design techniques, divide-and-conquer, dynamic programming, greedy methods, graph algorithms, and NP-completeness.",
+        // Rule: Senior or Junior CSC major who has CSC 357 needs this
+        checkNeed: (student) => {
+          if (student.fulfilledReqKeys["CSC 349"]) return { needed: false, status: "ALREADY_COMPLETED", note: "You already passed this core course." };
+          if (!student.fulfilledReqKeys["CSC 357"]) return { needed: true, status: "PREREQ_MISSING", note: "Prereq Missing: Requires CSC 357 (Systems)." };
+          return {
+            needed: true,
+            status: "CRITICAL_CORE",
+            badgeText: "Required for Grad: Major Core",
+            note: "Milestone requirement for BS Computer Science. Must be taken prior to Senior Project."
+          };
+        }
+      },
+      {
+        id: "csc-430",
+        code: "CSC 430",
+        title: "Programming Languages",
+        dept: "CSC",
+        units: 4,
+        instructor: "Dr. John Clements",
+        days: "TR",
+        time: "12:10 PM - 2:00 PM",
+        location: "Bldg 197 Rm 204",
+        seatsTotal: 32,
+        seatsOpen: 4,
+        geArea: "NONE",
+        isMajorCore: true,
+        isSupport: false,
+        uscp: false,
+        description: "Study of programming language concepts: scopes, bindings, types, interpreters, closures, lambda calculus, and memory management.",
+        checkNeed: (student) => {
+          if (student.fulfilledReqKeys["CSC 430"]) return { needed: false, status: "ALREADY_COMPLETED", note: "Requirement satisfied." };
+          return {
+            needed: true,
+            status: "MAJOR_CORE",
+            badgeText: "Required for Grad: Major Core",
+            note: "Required upper-division core course for Computer Science."
+          };
+        }
+      },
+      {
+        id: "phil-337",
+        code: "PHIL 337",
+        title: "Professional Ethics in Computing",
+        dept: "PHIL",
+        units: 4,
+        instructor: "Dr. Patrick Lin",
+        days: "TR",
+        time: "9:10 AM - 11:00 AM",
+        location: "Bldg 180 (Baker Center) Rm 102",
+        seatsTotal: 40,
+        seatsOpen: 18,
+        geArea: "C2",
+        isMajorCore: false,
+        isSupport: true,
+        uscp: false,
+        description: "Ethical issues in computing, AI privacy, intellectual property, autonomous weapons, surveillance capitalism, and whistleblowing.",
+        checkNeed: (student) => {
+          if (student.fulfilledReqKeys["GE_C2"]) {
+            return {
+              needed: false,
+              status: "ELECTIVE_ONLY",
+              badgeText: "Elective Only: Area C2 Already Met",
+              note: "Your GE Area C2 requirement is already satisfied. This will count towards Free Electives."
+            };
+          }
+          return {
+            needed: true,
+            status: "GE_CRITICAL",
+            badgeText: "Satisfies: GE Area C2 (Upper Div)",
+            note: "You have 0/4 units in GE Area C2. This fulfills both Upper-Division C2 and your College Ethics requirement!"
+          };
+        }
+      },
+      {
+        id: "hist-201",
+        code: "HIST 201",
+        title: "United States History to 1865",
+        dept: "HIST",
+        units: 4,
+        instructor: "Prof. Sarah Jensen",
+        days: "MWF",
+        time: "1:10 PM - 2:00 PM",
+        location: "Bldg 10 (Erhart Ag) Rm 221",
+        seatsTotal: 45,
+        seatsOpen: 0,
+        geArea: "D1",
+        isMajorCore: false,
+        isSupport: false,
+        uscp: true,
+        description: "Analysis of the political, social, cultural, and economic developments of the American people through the Civil War.",
+        checkNeed: (student) => {
+          if (student.fulfilledReqKeys["GE_D1"]) {
+            return { needed: false, status: "ALREADY_COMPLETED", note: "Area D1 already completed." };
+          }
+          return {
+            needed: true,
+            status: "DOUBLE_DIP",
+            badgeText: "Double Requirement: GE D1 + USCP",
+            note: "Fulfills GE Area D1 and your pending Cal Poly USCP (US Cultural Pluralism) requirement simultaneously!"
+          };
+        }
+      },
+      {
+        id: "es-112",
+        code: "ES 112",
+        title: "Race, Culture and Politics in the US",
+        dept: "ES",
+        units: 4,
+        instructor: "Dr. Grace Sandoval",
+        days: "TR",
+        time: "3:10 PM - 5:00 PM",
+        location: "Bldg 06 (Graphic Arts) Rm 101",
+        seatsTotal: 35,
+        seatsOpen: 8,
+        geArea: "F",
+        isMajorCore: false,
+        isSupport: false,
+        uscp: true,
+        description: "Comparative study of racial and ethnic experiences in the United States. Examines institutions, power structures, and cultural identities.",
+        checkNeed: (student) => {
+          if (student.fulfilledReqKeys["GE_F"]) {
+            return { needed: false, status: "ELECTIVE_ONLY", note: "GE Area F already met." };
+          }
+          return {
+            needed: true,
+            status: "GE_CRITICAL",
+            badgeText: "Required for Grad: GE Area F",
+            note: "Required Cal Poly graduation mandate: Area F (Ethnic Studies) + USCP."
+          };
+        }
+      },
+      {
+        id: "phys-142",
+        code: "PHYS 142",
+        title: "General Physics II (Electricity & Magnetism)",
+        dept: "PHYS",
+        units: 4,
+        instructor: "Dr. Matthew Kroll",
+        days: "MWF",
+        time: "8:10 AM - 9:30 AM",
+        location: "Bldg 53 (Science North) Rm 212",
+        seatsTotal: 30,
+        seatsOpen: 2,
+        geArea: "B",
+        isMajorCore: false,
+        isSupport: true,
+        uscp: false,
+        description: "Electrostatics, conductors, capacitors, DC circuits, magnetic fields, induction, and electromagnetic oscillations.",
+        checkNeed: (student) => {
+          if (student.fulfilledReqKeys["PHYS 142"]) return { needed: false, status: "ALREADY_COMPLETED", note: "Physics series completed." };
+          return {
+            needed: true,
+            status: "SUPPORT_NEEDED",
+            badgeText: "Needed: Major Support Science Elective",
+            note: "Completes your required Engineering Science Series alongside PHYS 141."
+          };
+        }
+      },
+      {
+        id: "csc-202",
+        code: "CSC 202",
+        title: "Data Structures",
+        dept: "CSC",
+        units: 4,
+        instructor: "Prof. H. Mammen",
+        days: "TR",
+        time: "10:10 AM - 12:00 PM",
+        location: "Bldg 14 Rm 255",
+        seatsTotal: 32,
+        seatsOpen: 5,
+        geArea: "NONE",
+        isMajorCore: true,
+        isSupport: false,
+        uscp: false,
+        description: "Abstract data types, linear structures, trees, priority queues, sorting algorithms, and hash tables.",
+        checkNeed: (student) => {
+          return {
+            needed: false,
+            status: "ALREADY_COMPLETED",
+            badgeText: "Already Satisfied (Grade: A)",
+            note: "You passed this course in Winter 2024. Repeating will not award additional units."
+          };
+        }
+      },
+      {
+        id: "math-141",
+        code: "MATH 141",
+        title: "Calculus I",
+        dept: "MATH",
+        units: 4,
+        instructor: "Prof. E. Camp",
+        days: "MTWR",
+        time: "11:10 AM - 12:00 PM",
+        location: "Bldg 38 Rm 121",
+        seatsTotal: 35,
+        seatsOpen: 14,
+        geArea: "B4",
+        isMajorCore: false,
+        isSupport: true,
+        uscp: false,
+        description: "Limits, continuity, differentiation, mean value theorem, curve sketching, optimization, and introductory integration.",
+        checkNeed: (student) => {
+          return {
+            needed: false,
+            status: "ALREADY_COMPLETED",
+            badgeText: "Already Satisfied (Grade: B+)",
+            note: "Fulfilled GE Area B4 & Support Math requirement in Winter 2024."
+          };
+        }
+      },
+      {
+        id: "csc-480",
+        code: "CSC 480",
+        title: "Artificial Intelligence",
+        dept: "CSC",
+        units: 4,
+        instructor: "Dr. Franz Kurfess",
+        days: "MWF",
+        time: "2:10 PM - 3:30 PM",
+        location: "Bldg 14 Rm 256",
+        seatsTotal: 32,
+        seatsOpen: 0,
+        geArea: "NONE",
+        isMajorCore: false,
+        isSupport: false,
+        isTechElective: true,
+        uscp: false,
+        description: "Heuristic search, game playing, constraint satisfaction, knowledge representation, reasoning, and machine learning principles.",
+        checkNeed: (student) => {
+          return {
+            needed: true,
+            status: "TECH_ELECTIVE",
+            badgeText: "Needed: Technical Elective (4/16 Met)",
+            note: "Counts towards your 16 units of 400-level Computer Science technical electives."
+          };
+        }
+      },
+      {
+        id: "coms-101",
+        code: "COMS 101",
+        title: "Public Speaking",
+        dept: "COMS",
+        units: 4,
+        instructor: "Prof. Davis",
+        days: "TR",
+        time: "8:10 AM - 10:00 AM",
+        location: "Bldg 10 Rm 115",
+        seatsTotal: 25,
+        seatsOpen: 3,
+        geArea: "A1",
+        isMajorCore: false,
+        isSupport: false,
+        uscp: false,
+        description: "Principles of oral communication, audience analysis, reasoning, speech organization, and delivery.",
+        checkNeed: (student) => {
+          return {
+            needed: false,
+            status: "ALREADY_COMPLETED",
+            badgeText: "Area A1 Fulfilled",
+            note: "You passed COMS 101 in Fall 2024. Not needed for graduation."
+          };
+        }
+      }
+    ];
+
+    // User's Planned Registration Cart
+    let cart = [];
+    let currentFilterRequirement = 'ALL';
+
+    /* ==========================================================
+       INITIALIZATION & RENDERING
+       ========================================================== */
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderStudentProfile();
+      renderTranscriptTable();
+      renderCourses();
+      updateCartDisplay();
+    });
+
+    // Switch between Main Tabs
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+
+      if (tabId === 'auditTab') document.getElementById('tabBtn-audit').classList.add('active');
+      if (tabId === 'searchTab') document.getElementById('tabBtn-search').classList.add('active');
+      if (tabId === 'cartTab') document.getElementById('tabBtn-cart').classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Render Student Profile & Donut Chart
+    function renderStudentProfile() {
+      document.getElementById('studentName').textContent = currentStudent.name;
+      document.getElementById('studentStanding').textContent = currentStudent.standing;
+      document.getElementById('studentEmplid').textContent = currentStudent.emplid;
+      document.getElementById('studentMajor').textContent = currentStudent.major;
+      document.getElementById('studentGradTerm').textContent = currentStudent.gradTerm;
+      document.getElementById('studentGpa').textContent = currentStudent.gpa;
+
+      const completed = currentStudent.completedUnits;
+      const ip = currentStudent.inProgressUnits;
+      const total = currentStudent.totalRequired;
+      const remaining = Math.max(0, total - (completed + ip));
+
+      document.getElementById('completedUnitsText').textContent = `${completed} Units`;
+      document.getElementById('ipUnitsText').textContent = `${ip} Units`;
+      document.getElementById('remainingUnitsText').textContent = `${remaining} Units`;
+
+      const pct = Math.round((completed / total) * 100);
+      document.getElementById('totalProgressPct').textContent = `${pct}%`;
+
+      // SVG Donut calculation (circumference = 2 * PI * 75 = 471.2)
+      const circumference = 471.2;
+      const completedOffset = circumference - (completed / total) * circumference;
+      const ipLength = (ip / total) * circumference;
+
+      const completedCircle = document.getElementById('donutCompletedArc');
+      const ipCircle = document.getElementById('donutInProgressArc');
+
+      completedCircle.style.strokeDashoffset = completedOffset;
+      ipCircle.style.strokeDasharray = `${ipLength} ${circumference - ipLength}`;
+      ipCircle.style.strokeDashoffset = completedOffset;
+    }
+
+    // Render Completed Transcript Table
+    function renderTranscriptTable() {
+      const tbody = document.getElementById('transcriptTableBody');
+      tbody.innerHTML = '';
+
+      currentStudent.completedCourses.forEach(c => {
+        const tr = document.createElement('tr');
+        const gradeClass = c.grade.startsWith('A') ? 'grade-A' : 'grade-B';
+
+        tr.innerHTML = `
+          <td style="font-weight:600; color:var(--slate-600);">${c.term}</td>
+          <td><strong style="color:var(--cp-green); font-size:0.95rem;">${c.code}</strong></td>
+          <td style="font-weight:600;">${c.title}</td>
+          <td>${c.units}.0</td>
+          <td><span class="grade-badge ${gradeClass}">${c.grade}</span></td>
+          <td><span style="font-size:0.85rem; color:var(--slate-700);">${c.req}</span></td>
+          <td><span style="color:var(--success); font-weight:700; font-size:0.85rem;">✓ Fulfilled</span></td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById('transcriptCount').textContent = currentStudent.completedCourses.length;
+    }
+
+    // Filter Logic for Smart Course Search
+    function filterCourses() {
+      const query = document.getElementById('searchQueryInput').value.toLowerCase().trim();
+      const selectedDept = document.getElementById('deptSelect').value;
+      const selectedGe = document.getElementById('geSelect').value;
+      const openOnly = document.getElementById('openSeatsOnly').checked;
+
+      const filtered = courseCatalog.filter(c => {
+        const needInfo = c.checkNeed(currentStudent);
+
+        // Text query search
+        const matchesQuery = c.code.toLowerCase().includes(query) ||
+                             c.title.toLowerCase().includes(query) ||
+                             c.instructor.toLowerCase().includes(query) ||
+                             c.description.toLowerCase().includes(query);
+
+        if (!matchesQuery) return false;
+
+        // Department prefix
+        if (selectedDept !== 'ALL' && c.dept !== selectedDept) return false;
+
+        // GE Area filter
+        if (selectedGe !== 'ALL') {
+          if (selectedGe === 'USCP' && !c.uscp) return false;
+          if (selectedGe !== 'USCP' && !c.geArea.includes(selectedGe)) return false;
+        }
+
+        // Open seats filter
+        if (openOnly && c.seatsOpen <= 0) return false;
+
+        // Smart requirement pills
+        if (currentFilterRequirement === 'NEEDED_ONLY' && !needInfo.needed) return false;
+        if (currentFilterRequirement === 'MAJOR_ONLY' && !c.isMajorCore) return false;
+        if (currentFilterRequirement === 'GE_ONLY' && (c.geArea === 'NONE' || !needInfo.needed)) return false;
+
+        return true;
+      });
+
+      renderCourses(filtered);
+    }
+
+    function setRequirementFilter(type) {
+      currentFilterRequirement = type;
+
+      document.querySelectorAll('.filter-pill').forEach(el => el.classList.remove('active'));
+      if (type === 'ALL') document.getElementById('filterAll').classList.add('active');
+      if (type === 'NEEDED_ONLY') document.getElementById('filterNeeded').classList.add('active');
+      if (type === 'MAJOR_ONLY') document.getElementById('filterMajor').classList.add('active');
+      if (type === 'GE_ONLY') document.getElementById('filterGE').classList.add('active');
+
+      filterCourses();
+    }
+
+    // Render Search Results with Badges and Advice
+    function renderCourses(courses = courseCatalog) {
+      const container = document.getElementById('coursesListContainer');
+      const counter = document.getElementById('resultsCounterText');
+      container.innerHTML = '';
+
+      counter.textContent = `Showing ${courses.length} courses matching your criteria`;
+
+      if (courses.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <h3>No courses match this filter</h3>
+            <p>Try resetting the department or requirement markers above.</p>
+          </div>
+        `;
+        return;
+      }
+
+      courses.forEach(c => {
+        const needInfo = c.checkNeed(currentStudent);
+        const inCart = cart.some(item => item.id === c.id);
+
+        let borderClass = 'highlight-needed';
+        let badgeClass = 'req-needed';
+        let badgeIcon = '🟢';
+
+        if (!needInfo.needed) {
+          borderClass = needInfo.status === 'ALREADY_COMPLETED' ? 'highlight-taken' : 'highlight-elective';
+          badgeClass = needInfo.status === 'ALREADY_COMPLETED' ? 'req-fulfilled' : 'req-warning';
+          badgeIcon = needInfo.status === 'ALREADY_COMPLETED' ? '✓' : '⚠️';
+        } else if (c.geArea !== 'NONE') {
+          badgeClass = 'req-ge-needed';
+          badgeIcon = '📘';
+        }
+
+        // Seat status
+        let seatPill = `<span class="seats-status seats-open">● ${c.seatsOpen} of ${c.seatsTotal} Seats Open</span>`;
+        if (c.seatsOpen === 0) {
+          seatPill = `<span class="seats-status seats-waitlist">✕ Section Full (Waitlist Open)</span>`;
+        } else if (c.seatsOpen <= 5) {
+          seatPill = `<span class="seats-status seats-low">▲ Only ${c.seatsOpen} Seats Left</span>`;
+        }
+
+        const card = document.createElement('div');
+        card.className = `course-card ${borderClass}`;
+        card.innerHTML = `
+          <div class="course-primary">
+            <div class="course-header-row">
+              <span class="course-code">${c.code}</span>
+              <span class="course-title">${c.title}</span>
+              <span class="course-units">${c.units}.0 Units</span>
+              <span class="req-marker ${badgeClass}">
+                <span>${badgeIcon}</span>
+                <span>${needInfo.badgeText || (needInfo.needed ? 'Needed for Grad' : 'Elective Only')}</span>
+              </span>
+              ${c.uscp ? `<span class="req-marker" style="background:#fdf2f8; color:#be185d; border:1px solid #fbcfe8;">USCP</span>` : ''}
+              ${c.geArea !== 'NONE' ? `<span class="req-marker" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">GE ${c.geArea}</span>` : ''}
+            </div>
+
+            <!-- Why you need it / Grad status explainer -->
+            <div class="why-needed-box">
+              <span class="why-icon">${needInfo.needed ? '🎓' : 'ℹ️'}</span>
+              <div>
+                <strong>PolyProfile Audit:</strong> ${needInfo.note}
+              </div>
+            </div>
+
+            <p style="font-size:0.87rem; color:var(--slate-600); margin-top:0.25rem;">
+              ${c.description}
+            </p>
+
+            <div class="course-logistics">
+              <div class="logistic-pill">
+                <strong>Schedule:</strong> ${c.days} • ${c.time}
+              </div>
+              <div class="logistic-pill">
+                <strong>Instructor:</strong> ${c.instructor}
+              </div>
+              <div class="logistic-pill">
+                <strong>Location:</strong> ${c.location}
+              </div>
+              <div class="logistic-pill">
+                ${seatPill}
+              </div>
+            </div>
+          </div>
+
+          <div class="course-actions">
+            <button 
+              class="btn-add-course ${inCart ? 'added' : ''}" 
+              id="btn-course-${c.id}" 
+              onclick="toggleCourseCart('${c.id}')"
+              ${needInfo.status === 'ALREADY_COMPLETED' ? 'disabled' : ''}
+            >
+              ${inCart ? '✓ Added to Cart' : '+ Add to Schedule'}
+            </button>
+            <div style="font-size:0.75rem; color:var(--slate-600); text-align:right;">
+              ${needInfo.needed ? 'Prioritized for Degree' : 'Optional unit count'}
+            </div>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // Add / Remove from Enrollment Cart
+    function toggleCourseCart(courseId) {
+      const course = courseCatalog.find(c => c.id === courseId);
+      if (!course) return;
+
+      const index = cart.findIndex(c => c.id === courseId);
+      if (index >= 0) {
+        cart.splice(index, 1);
+        showToast(`Removed ${course.code} from Fall 2026 plan`);
+      } else {
+        cart.push(course);
+        showToast(`Added ${course.code} (${course.units} units) to your planned schedule!`);
+      }
+
+      updateCartDisplay();
+      filterCourses();
+    }
+
+    function clearCart() {
+      if (cart.length === 0) return;
+      cart = [];
+      updateCartDisplay();
+      filterCourses();
+      showToast('Cleared all courses from schedule planner');
+    }
+
+    // Update Cart View and Impact Metrics
+    function updateCartDisplay() {
+      const cartContainer = document.getElementById('cartItemsList');
+      const cartCountBadge = document.getElementById('cartCountBadge');
+      const cartTotalUnits = document.getElementById('cartTotalUnits');
+      const loadStatusPill = document.getElementById('loadStatusPill');
+      const cartReqsMet = document.getElementById('cartReqsMetCount');
+      const unitsAfter = document.getElementById('unitsAfterTerm');
+
+      let totalUnits = 0;
+      let reqCount = 0;
+
+      cart.forEach(c => {
+        totalUnits += c.units;
+        const need = c.checkNeed(currentStudent);
+        if (need.needed) reqCount++;
+      });
+
+      cartCountBadge.textContent = `${totalUnits} Units`;
+      cartTotalUnits.textContent = `${totalUnits} Units`;
+      cartReqsMet.textContent = `${reqCount} Degree Milestones`;
+
+      // Enrollment Unit Load Status
+      if (totalUnits === 0) {
+        loadStatusPill.textContent = 'Cart is Empty';
+        loadStatusPill.style.color = 'var(--slate-600)';
+      } else if (totalUnits < 12) {
+        loadStatusPill.textContent = 'Part-Time Load (< 12 Units)';
+        loadStatusPill.style.color = 'var(--warning)';
+      } else if (totalUnits <= 16) {
+        loadStatusPill.textContent = 'Standard Full-Time (12-16 Units) ✓';
+        loadStatusPill.style.color = 'var(--success)';
+      } else {
+        loadStatusPill.textContent = 'Heavy Unit Load (> 16 Units)';
+        loadStatusPill.style.color = 'var(--cp-gold)';
+      }
+
+      const projectedRemaining = Math.max(0, currentStudent.totalRequired - (currentStudent.completedUnits + currentStudent.inProgressUnits + totalUnits));
+      unitsAfter.textContent = `${projectedRemaining} Units`;
+
+      // Render Cart List
+      if (cart.length === 0) {
+        cartContainer.innerHTML = `
+          <div class="empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <h3>Your Fall 2026 Cart is Empty</h3>
+            <p>Use the "Smart Class Search" tab to browse classes tagged for your graduation requirements.</p>
+            <button class="btn-sync" style="margin-top:1rem;" onclick="switchTab('searchTab')">Browse Recommended Classes</button>
+          </div>
+        `;
+        return;
+      }
+
+      cartContainer.innerHTML = '';
+      cart.forEach(c => {
+        const item = document.createElement('div');
+        item.style.padding = '1rem 0';
+        item.style.borderBottom = '1px solid var(--slate-200)';
+        item.style.display = 'flex';
+        item.style.justifyContent = 'space-between';
+        item.style.alignItems = 'center';
+
+        item.innerHTML = `
+          <div>
+            <div style="display:flex; align-items:center; gap:0.5rem;">
+              <strong style="color:var(--cp-green); font-size:1.05rem;">${c.code}</strong>
+              <span style="font-weight:700;">${c.title}</span>
+              <span class="course-units">${c.units}u</span>
+            </div>
+            <div style="font-size:0.83rem; color:var(--slate-600); margin-top:0.2rem;">
+              ${c.days} • ${c.time} • ${c.instructor}
+            </div>
+          </div>
+          <button class="btn-sync" style="background:var(--danger-bg); color:var(--danger); font-size:0.75rem; padding:0.35rem 0.65rem;" onclick="toggleCourseCart('${c.id}')">
+            Remove
+          </button>
+        `;
+        cartContainer.appendChild(item);
+      });
+    }
+
+    function simulateRegistration() {
+      if (cart.length === 0) {
+        showToast('Please add at least one course to your cart first.');
+        return;
+      }
+      showToast(`Success! Validated prereqs and sent ${cart.length} course(s) to Cal Poly Portal.`);
+    }
+
+    // Modal & Toast Controls
+    function openSyncModal() {
+      document.getElementById('syncModal').classList.add('open');
+    }
+
+    function closeSyncModal() {
+      document.getElementById('syncModal').classList.remove('open');
+    }
+
+    function loadSampleProfile(type) {
+      closeSyncModal();
+      if (type === 'senior') {
+        currentStudent.name = "Alex Rivera";
+        currentStudent.standing = "Senior Standing";
+        currentStudent.completedUnits = 122;
+        currentStudent.fulfilledReqKeys = {
+          "CSC 123": true, "CSC 202": true, "CSC 203": true, "CSC 225": true, "CSC 357": true,
+          "MATH 141": true, "MATH 142": true, "ENGL 134": true, "COMS 101": true, "PHYS 141": true,
+          "PHIL 126": true, "ART 111": true, "PSY 201": true, "GE_A1": true, "GE_A2": true, "GE_A3": true, "GE_B1": true, "GE_B4": true, "GE_C1": true, "GE_D2": true
+        };
+        showToast("Synchronized PolyProfile: Alex Rivera (Senior)");
+      } else {
+        currentStudent.name = "Jordan Blake";
+        currentStudent.standing = "Sophomore Standing";
+        currentStudent.completedUnits = 64;
+        currentStudent.gpa = "3.52";
+        currentStudent.gradTerm = "Spring 2028";
+        currentStudent.fulfilledReqKeys = {
+          "CSC 123": true, "MATH 141": true, "ENGL 134": true, "COMS 101": true, "GE_A1": true, "GE_A2": true, "GE_B4": true
+        };
+        showToast("Synchronized PolyProfile: Jordan Blake (Sophomore)");
+      }
+      renderStudentProfile();
+      filterCourses();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastBox');
+      document.getElementById('toastMessage').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+  </script>
 </body>
 </html>
